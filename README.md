@@ -12,7 +12,7 @@ Features:
    Everything that has been typed and all the output since the creation of the
    current pane can be saved to a file.
 4. Clear pane history with `prefix + alt + c`
-5. Save history for each pane in current window
+5. Save history for each pane in current window with `prefix + alt + shift + w`
 
 Tested and working on Linux, OSX and Cygwin.
 
@@ -61,7 +61,7 @@ This is just a convenience key binding.
 
 Save complete history for all panes in current window. 
 
-* Key binding: `prefix + alt + shift + p`
+* Key binding: `prefix + alt + shift + w`
 * File name format: `tmux-history-#{session_name}-#{window_index}-#{pane_index}-%Y%m%dT%H%M%S.log`
 * File path: `$HOME` (user home dir)
   * Example file: `tmux-history-my-session-0-1-20140527T165614.log`
