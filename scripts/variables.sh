@@ -14,6 +14,10 @@ default_save_complete_history_key="M-P" # Alt-Shift-p
 save_complete_history_key=$(tmux show-option -gqv "@save-complete-history-key")
 save_complete_history_key=${save_complete_history_key:-$default_save_complete_history_key}
 
+default_save_entire_window_key="M-W" # Alt-Shift-w
+save_entire_window_key=$(tmux show-option -gqv "@save-entire-window-key")
+save_entire_window_key=${save_entire_window_key:-$default_save_entire_window_key}
+
 default_clear_history_key="M-c" # Alt-c
 clear_history_key=$(tmux show-option -gqv "@clear-history-key")
 clear_history_key=${clear_history_key:-$default_clear_history_key}
@@ -53,3 +57,14 @@ save_complete_history_filename=$(tmux show-option -gqv "@save-complete-history-f
 save_complete_history_filename=${save_complete_history_filename:-$default_save_complete_history_filename}
 
 save_complete_history_full_filename="${save_complete_history_path}/${save_complete_history_filename}"
+
+# Save entire window options
+default_save_entire_window_path="$HOME"
+save_entire_window_path=$(tmux show-option -gqv "@save-entire-window-path")
+save_entire_window_path=${save_entire_window_path:-$default_save_entire_window_path}
+
+default_save_entire_window_filename="tmux-window-${filename_suffix}"
+save_entire_window_filename=$(tmux show-option -gqv "@save-entire-window-filename")
+save_entire_window_filename=${save_entire_window_filename:-$default_save_entire_window_filename}
+
+save_entire_window_full_filename="${save_entire_window_path}/${save_entire_window_filename}"

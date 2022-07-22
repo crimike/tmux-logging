@@ -12,6 +12,7 @@ Features:
    Everything that has been typed and all the output since the creation of the
    current pane can be saved to a file.
 4. Clear pane history with `prefix + alt + c`
+5. Save history for each pane in current window
 
 Tested and working on Linux, OSX and Cygwin.
 
@@ -55,6 +56,22 @@ it is ok to set this option to a high number.
 Key binding: `prefix + alt + c`
 
 This is just a convenience key binding.
+
+### 5. Save history for each pane in current window
+
+Save complete history for all panes in current window. 
+
+* Key binding: `prefix + alt + shift + p`
+* File name format: `tmux-history-#{session_name}-#{window_index}-#{pane_index}-%Y%m%dT%H%M%S.log`
+* File path: `$HOME` (user home dir)
+  * Example file: `tmux-history-my-session-0-1-20140527T165614.log`
+
+**NOTE**: this functionality depends on the value of `history-limit` - the number
+of lines Tmux keeps in the scrollback buffer. Only what Tmux kept will also be saved,
+to a file.
+
+Use `set -g history-limit 50000` in .tmux.conf, with modern computers
+it is ok to set this option to a high number.
 
 ### Installation with [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm) (recommended)
 
